@@ -61,10 +61,11 @@ function setClickHandlers() {
 function startOAuth() {
 
 	// open the authorzation url
-    var url = 'https://foursquare.com/oauth2/authenticate?client_id=' + foursquareOptions.clientId + '&response_type=token&display=touch&redirect_uri=' + foursquareOptions.redirectUri;
+    var url = 'https://www.linkedin.com/uas/oauth2/authorization?response_type=code&client_id=77rjfgg564st4x&scope=r_ basicprofile%r_network&state=1968JFK25889913jazz&redirect_uri=http://www.innovateordieonline.com';
     childWindow = window.open(url, '_blank');
+    console.log('code is '+ childWindow.window.location.href);
 
-    // evaluate the url every second, when Foursquare redirects to our callback url, the following if statements gets fired
+    // evaluate the url every second, when LinkedIn redirects to our callback url, the following if statements gets fired
 	window.int = self.setInterval(function(){
     	var currentURL = childWindow.window.location.href;
     	var callbackURL = foursquareOptions.redirectUri;
@@ -78,7 +79,9 @@ function startOAuth() {
 
 			// parse the oauth code
 			var code = childWindow.window.location.href;
-				code = code.split('access_token=');
+				console.log('code is '+code);
+				authCode = code.split('code=');
+				console.log('the authCode is '+ authCode);
 				code = code[1];
 			window.accessToken = code;
 

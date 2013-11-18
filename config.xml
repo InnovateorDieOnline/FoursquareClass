@@ -13,8 +13,8 @@
 <widget xmlns="http://www.w3.org/ns/widgets"
         xmlns:rim="http://www.blackberry.com/ns/widgets"
         version="1.0.0"
-        id="ClassFoursquareBadges">
-    <name>Class Foursquare Badges</name>
+        id="ClassLinkedInBadges">
+    <name>Class LinkedIn Badges</name>
     <content src="local:///index.html" />
     <author rim:copyright="2013"            
             >IFF Labs</author>
